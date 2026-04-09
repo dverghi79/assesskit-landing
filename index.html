@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AssessKit — The Discovery Portal for Cybersecurity Consultants</title>
+  <meta name="description" content="Stop chasing clients for incomplete questionnaires. AssessKit gives your SMB clients a guided discovery wizard that generates a complete security baseline document before your assessment begins." />
+
+  <!-- Plausible Analytics (cookie-free, no consent required) -->
+  <script defer data-domain="assesskit.vercel.app" src="https://plausible.io/js/script.js"></script>
+  <!-- Google Ads gtag — loaded only after cookie consent -->
+  <script>
+    function loadGtag() {
+      var s = document.createElement('script');
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18071371531';
+      s.async = true;
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function(){dataLayer.push(arguments);};
+      gtag('js', new Date());
+      gtag('config', 'AW-18071371531');
+    }
+    function setCookieConsent(choice) {
+      localStorage.setItem('cookie_consent', choice);
+      var banner = document.getElementById('cookie-banner');
+      if (banner) banner.style.display = 'none';
+      if (choice === 'accepted') loadGtag();
+    }
+    (function() {
+      var consent = localStorage.getItem('cookie_consent');
+      if (consent === 'accepted') { loadGtag(); }
+      else if (consent !== 'rejected') {
+        document.addEventListener('DOMContentLoaded', function() {
+          var b = document.getElementById('cookie-banner');
+          if (b) b.style.display = 'block';
+        });
+      }
+    })();
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'DM Sans', system-ui, sans-serif; background: #070d14; color: #e8f0f8; margin: 0; }
+    h1,h2,h3,h4,h5,h6 { font-family: 'Space Grotesk', system-ui, sans-serif; }
+    html { scroll-behavior: smooth; }
+    .accent { color: #38bdf8; }
+    .border-line { border-top: 1px solid #0f1f2e; }
+    input, select, textarea { background: #0d1a26; border: 1px solid #0f1f2e; color: #e8f0f8; outline: none; border-radius: 0.375rem; }
+    input:focus, select:focus, textarea:focus { border-color: rgba(56,189,248,0.5); box-shadow: 0 0 0 1px rgba(56,189,248,0.25); }
+    ::placeholder { color: #2d4a63; }
+    select option { background: #0d1a26; }
+    .card { background: #0b1723; border: 1px solid #0f1f2e; border-radius: 0.5rem; }
+    .tag { background: transparent; border: 1px solid #0f1f2e; color: #2d4a63; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.05em; padding: 0.3rem 0.65rem; border-radius: 0.25rem; }
+    .btn-primary { background: #38bdf8; color: #070d14; font-weight: 700; border-radius: 0.375rem; padding: 0 2rem; height: 3rem; display: inline-flex; align-items: center; justify-content: center; font-size: 1rem; text-decoration: none; transition: background 0.15s; font-family: 'Space Grotesk', sans-serif; }
+    .btn-primary:hover { background: #0ea5e9; }
+    .btn-ghost { color: #2d4a63; padding: 0 1rem; height: 3rem; display: inline-flex; align-items: center; font-size: 1rem; text-decoration: none; transition: color 0.15s; }
+    .btn-ghost:hover { color: #e8f0f8; }
+    .founding-box { border: 1px solid rgba(56,189,248,0.3); background: rgba(56,189,248,0.04); border-radius: 0.5rem; padding: 2.5rem; }
+    .step-icon { width: 2.25rem; height: 2.25rem; background: rgba(56,189,248,0.1); border-radius: 0.375rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .mono { font-family: 'JetBrains Mono', monospace; }
+    .grid-auto { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .grid-2col { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    @media (max-width: 768px) { .hide-mobile { display: none !important; } }
+    #cookie-banner { display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#0b1723;border-top:1px solid #0f1f2e;padding:1rem 2rem; }
+  </style>
+</head>
+<body>
+
+  <!-- GDPR COOKIE CONSENT BANNER -->
+  <div id="cookie-banner">
+    <div style="max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;">
+      <p style="margin:0;font-size:0.8125rem;color:rgba(232,240,248,0.7);">We use analytics cookies to understand how you use this page. <a href="/privacy.html" style="color:#38bdf8;text-decoration:underline;">Privacy Policy</a></p>
+      <div style="display:flex;gap:0.625rem;flex-shrink:0;">
+        <button onclick="setCookieConsent('rejected')" style="background:transparent;border:1px solid #1a3048;color:rgba(232,240,248,0.5);padding:0.375rem 0.875rem;border-radius:0.25rem;cursor:pointer;font-size:0.8125rem;font-family:'DM Sans',sans-serif;">Reject</button>
+        <button onclick="setCookieConsent('accepted')" style="background:#38bdf8;color:#070d14;font-weight:700;padding:0.375rem 0.875rem;border-radius:0.25rem;cursor:pointer;font-size:0.8125rem;font-family:'Space Grotesk',sans-serif;">Accept</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAV / LOGO -->
+  <div style="max-width:1120px;margin:0 auto;padding:1.5rem 2rem 0;">
+    <div style="display:flex;align-items:center;gap:0.5rem;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1rem;color:#e8f0f8;letter-spacing:-0.01em;">AssessKit</span>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section style="max-width:1120px;margin:0 auto;padding:4rem 2rem 4rem;position:relative;">
+    <!-- Badge -->
+    <div style="display:inline-flex;align-items:center;gap:0.5rem;border:1px solid #0f1f2e;border-radius:0.25rem;padding:0.3rem 0.75rem;color:#2d4a63;font-size:0.8rem;margin-bottom:2rem;font-family:'JetBrains Mono',monospace;">
+      <span style="color:#38bdf8;">→</span> Early Access Open · No tool exists for this today
+    </div>
+
+    <div style="max-width:780px;">
+      <h1 style="font-size:clamp(2.25rem,5vw,3.75rem);line-height:1.08;font-weight:700;letter-spacing:-0.025em;margin-bottom:1.5rem;color:#e8f0f8;">
+        You sent the questionnaire
+        3 weeks ago. Half the fields
+        are <span style="color:#38bdf8;">blank.</span>
+      </h1>
+      <p style="font-size:clamp(1.05rem,2vw,1.2rem);color:#2d4a63;line-height:1.7;max-width:600px;margin-bottom:2.5rem;">
+        AssessKit gives your SMB clients a guided security discovery wizard that explains every question as they go — and generates a complete, structured baseline document the moment they submit. From signed contract to assessment start in 48 hours instead of 3 weeks.
+      </p>
+      <div style="display:flex;flex-wrap:wrap;gap:1rem;align-items:center;">
+        <a href="#early-access" class="btn-primary">Claim a founding spot</a>
+        <a href="#how-it-works" class="btn-ghost">See how it works ↓</a>
+      </div>
+    </div>
+
+    <!-- Terminal-style accent (desktop) -->
+    <div class="hide-mobile card" style="position:absolute;right:2rem;top:50%;transform:translateY(-50%);width:260px;padding:1.25rem;font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:#2d4a63;">
+      <div style="color:#38bdf8;margin-bottom:0.75rem;">// client_discovery.json</div>
+      <div><span style="color:#0ea5e9;">network_ranges:</span> <span style="color:#e8f0f8;">✓</span></div>
+      <div><span style="color:#0ea5e9;">security_tools:</span> <span style="color:#e8f0f8;">✓</span></div>
+      <div><span style="color:#0ea5e9;">user_count:</span> <span style="color:#e8f0f8;">✓</span></div>
+      <div><span style="color:#0ea5e9;">data_classification:</span> <span style="color:#e8f0f8;">✓</span></div>
+      <div><span style="color:#0ea5e9;">existing_policies:</span> <span style="color:#e8f0f8;">✓</span></div>
+      <div style="margin-top:0.75rem;color:#38bdf8;">→ baseline_doc generated</div>
+    </div>
+  </section>
+
+  <!-- PAIN SECTION -->
+  <section class="border-line" style="padding:5rem 2rem;">
+    <div style="max-width:1120px;margin:0 auto;">
+      <p style="font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#38bdf8;font-family:'JetBrains Mono',monospace;margin-bottom:1rem;">The problem</p>
+      <h2 style="font-size:clamp(1.5rem,3vw,2.5rem);font-weight:700;letter-spacing:-0.015em;max-width:660px;margin-bottom:4rem;color:#e8f0f8;">
+        No tool was built for the consultant who needs their client to fill out a discovery form.
+      </h2>
+
+      <div class="grid-auto" style="gap:3rem;">
+        <div>
+          <span style="display:block;font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:rgba(56,189,248,0.45);margin-bottom:0.75rem;">01</span>
+          <p style="font-size:1rem;color:#2d4a63;line-height:1.7;">
+            Vanta, Drata, Conveyor — every security questionnaire tool is built for the VENDOR answering enterprise security reviews. None are built for the consultant who needs their SMB CLIENT to complete a discovery form.
+          </p>
+        </div>
+        <div>
+          <span style="display:block;font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:rgba(56,189,248,0.45);margin-bottom:0.75rem;">02</span>
+          <p style="font-size:1rem;color:#2d4a63;line-height:1.7;">
+            Your client doesn't know what a network range is. Explaining it over email takes 3 emails. Explaining it in a 2-hour onboarding call is billable time you'd rather spend on the assessment.
+          </p>
+        </div>
+        <div>
+          <span style="display:block;font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:rgba(56,189,248,0.45);margin-bottom:0.75rem;">03</span>
+          <p style="font-size:1rem;color:#2d4a63;line-height:1.7;">
+            You're a security professional. Your discovery process involves emailing a Word document. That's not just inefficient — it's the irony your clients notice.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works" class="border-line" style="padding:5rem 2rem;">
+    <div style="max-width:1120px;margin:0 auto;">
+      <p style="font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#38bdf8;font-family:'JetBrains Mono',monospace;margin-bottom:1rem;">How it works</p>
+      <h2 style="font-size:clamp(1.5rem,3vw,2.5rem);font-weight:700;letter-spacing:-0.015em;max-width:600px;margin-bottom:4rem;color:#e8f0f8;">
+        Your client completes the portal. You get the baseline document.
+      </h2>
+
+      <div class="grid-auto" style="gap:1.5rem;">
+        <div class="card" style="padding:2rem;">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem;">
+            <div class="step-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+            </div>
+            <span class="mono" style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:#2d4a63;">Step 1</span>
+          </div>
+          <h3 style="font-size:1.05rem;font-weight:600;color:#e8f0f8;margin-bottom:0.75rem;">You send a branded discovery portal link</h3>
+          <p style="font-size:0.95rem;color:#2d4a63;line-height:1.65;">Your client gets a link to your AssessKit portal — white-labeled with your firm's name. One link, no account required on their end.</p>
+        </div>
+        <div class="card" style="padding:2rem;">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem;">
+            <div class="step-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <span class="mono" style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:#2d4a63;">Step 2</span>
+          </div>
+          <h3 style="font-size:1.05rem;font-weight:600;color:#e8f0f8;margin-bottom:0.75rem;">A guided wizard collects everything you need</h3>
+          <p style="font-size:0.95rem;color:#2d4a63;line-height:1.65;">Each question includes plain-English explanations. Network ranges, tool inventory, user count, data classification, existing policies — all collected in one structured session.</p>
+        </div>
+        <div class="card" style="padding:2rem;">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem;">
+            <div class="step-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <span class="mono" style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:#2d4a63;">Step 3</span>
+          </div>
+          <h3 style="font-size:1.05rem;font-weight:600;color:#e8f0f8;margin-bottom:0.75rem;">You get the baseline document the moment they submit</h3>
+          <p style="font-size:0.95rem;color:#2d4a63;line-height:1.65;">A structured pre-assessment document — formatted for immediate use — lands in your dashboard. Start the assessment on day 1, not day 21.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO FOR -->
+  <section class="border-line" style="padding:5rem 2rem;">
+    <div style="max-width:1120px;margin:0 auto;">
+      <p style="font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#38bdf8;font-family:'JetBrains Mono',monospace;margin-bottom:1rem;">Built for</p>
+      <h2 style="font-size:clamp(1.5rem,3vw,2.5rem);font-weight:700;letter-spacing:-0.015em;max-width:600px;margin-bottom:4rem;color:#e8f0f8;">
+        Solo and 2-3 person cybersecurity consultancies serving SMB clients
+      </h2>
+
+      <div class="grid-2col" style="gap:1.5rem;margin-bottom:2rem;">
+        <div class="card" style="padding:2rem;">
+          <span class="mono" style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:#2d4a63;display:block;margin-bottom:1rem;">The throughput problem</span>
+          <h3 style="font-size:1.15rem;font-weight:600;color:#e8f0f8;margin-bottom:0.75rem;">Cut time-to-start from 3 weeks to 48 hours.</h3>
+          <p style="font-size:0.95rem;color:#2d4a63;line-height:1.65;">For consultants who bill by project, faster start means more assessments per quarter. Every day spent chasing incomplete discovery data is a day you're not billing. AssessKit removes that wait.</p>
+        </div>
+        <div class="card" style="padding:2rem;">
+          <span class="mono" style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:#2d4a63;display:block;margin-bottom:1rem;">The professionalism problem</span>
+          <h3 style="font-size:1.15rem;font-weight:600;color:#e8f0f8;margin-bottom:0.75rem;">Your discovery process should be as secure as your assessment.</h3>
+          <p style="font-size:0.95rem;color:#2d4a63;line-height:1.65;">Encrypted, role-gated, and auditable — not a Word document sent over Gmail. AssessKit gives you a discovery process your clients can trust, which is the first thing they're evaluating before they trust you with the rest.</p>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:0.65rem;">
+        <span class="tag">Solo cybersec consultants</span>
+        <span class="tag">2-3 person firms</span>
+        <span class="tag">SMB client base</span>
+        <span class="tag">vCISO advisory</span>
+        <span class="tag">Pen testing firms</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- EARLY ACCESS / CTA -->
+  <section id="early-access" class="border-line" style="padding:5rem 2rem;">
+    <div style="max-width:1120px;margin:0 auto;">
+
+      <!-- Founding Customer box -->
+      <div class="founding-box" style="max-width:800px;margin-bottom:5rem;">
+        <p style="font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#38bdf8;font-family:'JetBrains Mono',monospace;margin-bottom:1rem;">Founding customer · 20 spots</p>
+        <h2 style="font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;letter-spacing:-0.015em;color:#e8f0f8;margin-bottom:1rem;">
+          Lock in $29/mo forever before we raise prices at launch.
+        </h2>
+        <p style="font-size:0.95rem;color:#2d4a63;line-height:1.65;max-width:560px;margin-bottom:1.5rem;">
+          The first 20 consultancies get AssessKit for $29/mo, grandfathered in permanently. You also shape what gets built next and get a direct line to the engineering team.
+        </p>
+        <ul style="list-style:none;padding:0;margin-bottom:2rem;display:flex;flex-direction:column;gap:0.625rem;">
+          <li style="display:flex;align-items:flex-start;gap:0.625rem;font-size:0.875rem;color:#e8f0f8;">
+            <span style="color:#38bdf8;font-family:monospace;margin-top:0.1rem;">✓</span>
+            <span><strong>$29/mo forever</strong> — grandfathered when we launch at full price</span>
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:0.625rem;font-size:0.875rem;color:#e8f0f8;">
+            <span style="color:#38bdf8;font-family:monospace;margin-top:0.1rem;">✓</span>
+            <span><strong>Private Slack</strong> with the founder and engineers</span>
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:0.625rem;font-size:0.875rem;color:#e8f0f8;">
+            <span style="color:#38bdf8;font-family:monospace;margin-top:0.1rem;">✓</span>
+            <span><strong>Feature request priority</strong> — founding customers shape the roadmap</span>
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:0.625rem;font-size:0.875rem;color:#e8f0f8;">
+            <span style="color:#38bdf8;font-family:monospace;margin-top:0.1rem;">✓</span>
+            <span><strong>Cancel anytime</strong> — 30-day money back if it's not a fit</span>
+          </li>
+        </ul>
+        <a
+          href="https://buy.stripe.com/4gM7sMbeGgxEaVAg7n9IQ03"
+          onclick="trackFoundingClick()"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-primary"
+        >
+          Claim a founding spot · $29/mo →
+        </a>
+        <p style="font-size:0.75rem;color:rgba(45,74,99,0.7);margin-top:1rem;">Secured by Stripe. Cancel anytime from your dashboard.</p>
+      </div>
+
+      <!-- Free early access form -->
+      <div class="grid-2col" style="gap:3rem 4rem;align-items:start;">
+        <!-- Left copy -->
+        <div>
+          <p style="font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#2d4a63;font-family:'JetBrains Mono',monospace;margin-bottom:1rem;">Not ready to commit?</p>
+          <h2 style="font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;letter-spacing:-0.015em;color:#e8f0f8;margin-bottom:1.5rem;">Join the free early access list.</h2>
+          <p style="font-size:0.95rem;color:#2d4a63;line-height:1.65;max-width:420px;margin-bottom:1.5rem;">
+            We're onboarding a small group of solo and small cybersec consultancies to test AssessKit before full launch. Share your current process — it shapes what we build.
+          </p>
+          <div style="display:flex;flex-direction:column;gap:0.75rem;font-size:0.875rem;color:rgba(45,74,99,0.85);">
+            <p style="display:flex;align-items:center;gap:0.5rem;"><span style="width:5px;height:5px;border-radius:50%;background:rgba(56,189,248,0.6);flex-shrink:0;"></span>Free during early access</p>
+            <p style="display:flex;align-items:center;gap:0.5rem;"><span style="width:5px;height:5px;border-radius:50%;background:rgba(56,189,248,0.6);flex-shrink:0;"></span>Your feedback shapes the product</p>
+            <p style="display:flex;align-items:center;gap:0.5rem;"><span style="width:5px;height:5px;border-radius:50%;background:rgba(56,189,248,0.6);flex-shrink:0;"></span>No credit card required</p>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div id="success-message" style="display:none;padding:2rem 0;">
+          <div style="width:3rem;height:3rem;background:rgba(56,189,248,0.1);border-radius:0.375rem;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h2 style="font-size:1.5rem;font-weight:700;color:#e8f0f8;margin-bottom:1rem;">You're in.</h2>
+          <p style="font-size:0.95rem;color:#2d4a63;line-height:1.65;">Thanks. We'll be in touch within 48 hours with early access details and next steps.</p>
+        </div>
+        <form id="signup-form" onsubmit="handleSubmit(event)" style="display:flex;flex-direction:column;gap:1.25rem;">
+          <div>
+            <label style="display:block;font-size:0.875rem;font-weight:500;color:#e8f0f8;margin-bottom:0.375rem;">Work email <span style="color:#38bdf8;">*</span></label>
+            <input id="email" type="email" required placeholder="you@yourfirm.com" style="width:100%;height:2.75rem;padding:0 1rem;font-size:1rem;" />
+          </div>
+          <div>
+            <label style="display:block;font-size:0.875rem;font-weight:500;color:#e8f0f8;margin-bottom:0.375rem;">Firm name <span style="color:#38bdf8;">*</span></label>
+            <input id="company" type="text" required placeholder="Apex Security Consulting" style="width:100%;height:2.75rem;padding:0 1rem;font-size:1rem;" />
+          </div>
+          <div>
+            <label style="display:block;font-size:0.875rem;font-weight:500;color:#e8f0f8;margin-bottom:0.375rem;">Team size</label>
+            <select id="role" style="width:100%;height:2.75rem;padding:0 1rem;font-size:1rem;">
+              <option value="">Select team size</option>
+              <option value="Solo consultant">Solo consultant</option>
+              <option value="2-3 people">2-3 people</option>
+              <option value="4-10 people">4-10 people</option>
+              <option value="10+">10+ people</option>
+            </select>
+          </div>
+          <div>
+            <label style="display:block;font-size:0.875rem;font-weight:500;color:#e8f0f8;margin-bottom:0.375rem;">How do you collect discovery data from clients today?</label>
+            <textarea id="challenge" rows="3" placeholder="e.g., I send a Word doc over email and wait 2-3 weeks..." style="width:100%;padding:0.75rem 1rem;font-size:1rem;resize:none;"></textarea>
+          </div>
+          <button type="submit" id="submit-btn" style="height:3rem;background:#38bdf8;color:#070d14;font-weight:700;font-size:1rem;border:none;border-radius:0.375rem;cursor:pointer;font-family:'Space Grotesk',sans-serif;transition:background 0.15s;">
+            Get early access
+          </button>
+          <p style="font-size:0.75rem;color:rgba(45,74,99,0.6);text-align:center;">No spam. We'll only contact you about AssessKit.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-line" style="padding:2.5rem 2rem;">
+    <div style="max-width:1120px;margin:0 auto;">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:1.25rem;margin-bottom:1.25rem;">
+        <div style="display:flex;align-items:center;gap:0.5rem;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.875rem;color:#e8f0f8;">AssessKit</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:1.5rem;font-size:0.75rem;color:rgba(45,74,99,0.65);">
+          <a href="mailto:info@leanaistudio.com" style="color:inherit;text-decoration:none;" onmouseover="this.style.color='#2d4a63'" onmouseout="this.style.color='rgba(45,74,99,0.65)'">info@leanaistudio.com</a>
+          <a href="/privacy.html" style="color:inherit;text-decoration:none;" onmouseover="this.style.color='#2d4a63'" onmouseout="this.style.color='rgba(45,74,99,0.65)'">Privacy Policy</a>
+          <a href="/terms.html" style="color:inherit;text-decoration:none;" onmouseover="this.style.color='#2d4a63'" onmouseout="this.style.color='rgba(45,74,99,0.65)'">Terms of Service</a>
+        </div>
+      </div>
+      <div style="border-top:1px solid #0f1f2e;padding-top:1rem;font-size:0.7rem;color:rgba(45,74,99,0.45);line-height:1.8;">
+        <p style="margin:0;">© 2026 LeanAI Studio srl — P.IVA/CF: 14561020968</p>
+        <p style="margin:0;">AssessKit is a product of LeanAI Studio srl</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function getUTMParams() {
+      var params = new URLSearchParams(window.location.search);
+      var utm = {};
+      ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k) {
+        var v = params.get(k);
+        if (v) utm[k] = v;
+      });
+      return utm;
+    }
+
+    function trackFoundingClick() {
+      try {
+        if (window.plausible) window.plausible('FoundingClick', { props: { source: getUTMParams().utm_medium || 'direct' } });
+        if (typeof gtag === 'function') gtag('event', 'conversion', { send_to: 'AW-18071371531/assesskit_founding', value: 29.0, currency: 'USD' });
+      } catch(e) {}
+    }
+
+    async function handleSubmit(e) {
+      e.preventDefault();
+      var btn = document.getElementById('submit-btn');
+      btn.textContent = 'Submitting...';
+      btn.disabled = true;
+
+      var utm = getUTMParams();
+      var payload = {
+        secret: 'ak_9n4k6p2m1r8s',
+        product: 'AssessKit',
+        email: document.getElementById('email').value,
+        company: document.getElementById('company').value,
+        role: document.getElementById('role').value,
+        challenge: document.getElementById('challenge').value,
+        source: utm.utm_medium || 'direct',
+        submitted_at: new Date().toISOString(),
+        page_url: window.location.href
+      };
+      Object.assign(payload, utm);
+
+      var SLACK_WEBHOOK = 'https://hooks.slack.com/services/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';
+      try {
+        await fetch(SLACK_WEBHOOK, {
+          method: 'POST', mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text: '*[AssessKit]* New signup!\n*Email:* ' + payload.email + '\n*Firm:* ' + payload.company + '\n*Team size:* ' + (payload.role || 'n/a') + '\n*Source:* ' + payload.source + '\n*Discovery process today:* ' + (payload.challenge || 'n/a') })
+        });
+      } catch(ex) {}
+
+      try { if (window.plausible) window.plausible('Signup', { props: { source: payload.source } }); } catch(ex) {}
+      try { if (typeof gtag === 'function') gtag('event', 'conversion', { send_to: 'AW-18071371531/assesskit_signup', value: 1.0, currency: 'USD' }); } catch(ex) {}
+
+      document.getElementById('signup-form').style.display = 'none';
+      document.getElementById('success-message').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
