@@ -6,8 +6,8 @@
   <title>AssessKit — Vulnerability Assessment and Penetration Testing Platform for Consultants</title>
   <meta name="description" content="Vulnerability assessment and penetration testing management for cybersecurity consultants. CIS controls mapping, client discovery portals, and structured security baseline reports. From signed contract to first scan in 48 hours." />
 
-  <!-- Plausible Analytics (cookie-free, no consent required) -->
-  <script defer data-domain="assesskit.vercel.app" src="https://plausible.io/js/script.js"></script>
+  <!-- Vercel Analytics -->
+  <script defer src="/_vercel/insights/script.js"></script>
   <!-- Google Ads gtag — loaded only after cookie consent -->
   <script>
     function loadGtag() {
@@ -405,8 +405,8 @@
         });
       } catch(ex) {}
 
-      // Plausible waitlist-signup event
-      try { if (window.plausible) window.plausible('waitlist-signup', { props: { source: payload.source } }); } catch(ex) {}
+      // Vercel Analytics waitlist-signup event
+      try { if (window.va) window.va('event', { name: 'waitlist-signup', data: { product: 'AssessKit', source: payload.source } }); } catch(ex) {}
       // Google Ads conversion
       try { if (typeof gtag === 'function') gtag('event', 'conversion', { send_to: 'AW-18071371531/z6DhCLq9-JccEIv-jKlD', value: 1.0, currency: 'USD' }); } catch(ex) {}
 
