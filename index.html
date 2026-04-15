@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AssessKit — The Discovery Portal for Cybersecurity Consultants</title>
-  <meta name="description" content="Stop chasing clients for incomplete questionnaires. AssessKit gives your SMB clients a guided discovery wizard that generates a complete security baseline document before your assessment begins." />
+  <title>AssessKit — Vulnerability Assessment and Penetration Testing Platform for Consultants</title>
+  <meta name="description" content="Vulnerability assessment and penetration testing management for cybersecurity consultants. CIS controls mapping, client discovery portals, and structured security baseline reports. From signed contract to first scan in 48 hours." />
 
   <!-- Plausible Analytics (cookie-free, no consent required) -->
   <script defer data-domain="assesskit.vercel.app" src="https://plausible.io/js/script.js"></script>
@@ -97,17 +97,16 @@
   <section style="max-width:1120px;margin:0 auto;padding:4rem 2rem 4rem;position:relative;">
     <!-- Badge -->
     <div style="display:inline-flex;align-items:center;gap:0.5rem;border:1px solid #0f1f2e;border-radius:0.25rem;padding:0.3rem 0.75rem;color:#2d4a63;font-size:0.8rem;margin-bottom:2rem;font-family:'JetBrains Mono',monospace;">
-      <span style="color:#38bdf8;">→</span> Early Access Open · No tool exists for this today
+      <span style="color:#38bdf8;">→</span> Early Access Open · Vulnerability Assessment for Consultants
     </div>
 
     <div style="max-width:780px;">
       <h1 style="font-size:clamp(2.25rem,5vw,3.75rem);line-height:1.08;font-weight:700;letter-spacing:-0.025em;margin-bottom:1.5rem;color:#e8f0f8;">
-        You sent the questionnaire
-        3 weeks ago. Half the fields
-        are <span style="color:#38bdf8;">blank.</span>
+        Vulnerability assessments and pen tests,
+        <span style="color:#38bdf8;">structured from day one.</span>
       </h1>
       <p style="font-size:clamp(1.05rem,2vw,1.2rem);color:#2d4a63;line-height:1.7;max-width:600px;margin-bottom:2.5rem;">
-        AssessKit gives your SMB clients a guided security discovery wizard that explains every question as they go — and generates a complete, structured baseline document the moment they submit. From signed contract to assessment start in 48 hours instead of 3 weeks.
+        AssessKit gives cybersecurity consultants a client-facing discovery portal that collects everything you need before the assessment starts — network topology, existing controls, compliance scope. Maps to CIS Controls, runs gap analysis, and generates a structured baseline document. From signed contract to first vulnerability scan in 48 hours.
       </p>
       <div style="display:flex;flex-wrap:wrap;gap:1rem;align-items:center;">
         <a href="#waitlist" class="btn-primary">Join the waitlist for early access</a>
@@ -117,13 +116,13 @@
 
     <!-- Terminal-style accent (desktop) -->
     <div class="hide-mobile card" style="position:absolute;right:2rem;top:50%;transform:translateY(-50%);width:260px;padding:1.25rem;font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:#2d4a63;">
-      <div style="color:#38bdf8;margin-bottom:0.75rem;">// client_discovery.json</div>
-      <div><span style="color:#0ea5e9;">network_ranges:</span> <span style="color:#e8f0f8;">✓</span></div>
-      <div><span style="color:#0ea5e9;">security_tools:</span> <span style="color:#e8f0f8;">✓</span></div>
-      <div><span style="color:#0ea5e9;">user_count:</span> <span style="color:#e8f0f8;">✓</span></div>
-      <div><span style="color:#0ea5e9;">data_classification:</span> <span style="color:#e8f0f8;">✓</span></div>
-      <div><span style="color:#0ea5e9;">existing_policies:</span> <span style="color:#e8f0f8;">✓</span></div>
-      <div style="margin-top:0.75rem;color:#38bdf8;">→ baseline_doc generated</div>
+      <div style="color:#38bdf8;margin-bottom:0.75rem;">// cis_controls_assessment.json</div>
+      <div><span style="color:#0ea5e9;">cis_control_1:</span> <span style="color:#e8f0f8;">✓ inventory</span></div>
+      <div><span style="color:#0ea5e9;">cis_control_4:</span> <span style="color:#e8f0f8;">✓ secure config</span></div>
+      <div><span style="color:#0ea5e9;">cis_control_7:</span> <span style="color:#e8f0f8;">✓ vuln mgmt</span></div>
+      <div><span style="color:#0ea5e9;">cis_control_18:</span> <span style="color:#e8f0f8;">✓ pen testing</span></div>
+      <div><span style="color:#0ea5e9;">gap_analysis:</span> <span style="color:#e8f0f8;">12 findings</span></div>
+      <div style="margin-top:0.75rem;color:#38bdf8;">→ baseline_report generated</div>
     </div>
   </section>
 
@@ -132,26 +131,26 @@
     <div style="max-width:1120px;margin:0 auto;">
       <p style="font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#38bdf8;font-family:'JetBrains Mono',monospace;margin-bottom:1rem;">The problem</p>
       <h2 style="font-size:clamp(1.5rem,3vw,2.5rem);font-weight:700;letter-spacing:-0.015em;max-width:660px;margin-bottom:4rem;color:#e8f0f8;">
-        No tool was built for the consultant who needs their client to fill out a discovery form.
+        Vulnerability assessment tools were built for enterprises. Not for the consultant running pen tests for 15 SMB clients.
       </h2>
 
       <div class="grid-auto" style="gap:3rem;">
         <div>
           <span style="display:block;font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:rgba(56,189,248,0.45);margin-bottom:0.75rem;">01</span>
           <p style="font-size:1rem;color:#2d4a63;line-height:1.7;">
-            Vanta, Drata, Conveyor — every security questionnaire tool is built for the VENDOR answering enterprise security reviews. None are built for the consultant who needs their SMB CLIENT to complete a discovery form.
+            Nessus, Qualys, Rapid7 — the vulnerability assessment platforms on the market are built for in-house security teams scanning their own networks. None of them help you manage the pre-assessment client discovery that makes or breaks your pen test scope.
           </p>
         </div>
         <div>
           <span style="display:block;font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:rgba(56,189,248,0.45);margin-bottom:0.75rem;">02</span>
           <p style="font-size:1rem;color:#2d4a63;line-height:1.7;">
-            Your client doesn't know what a network range is. Explaining it over email takes 3 emails. Explaining it in a 2-hour onboarding call is billable time you'd rather spend on the assessment.
+            Your client doesn't know their CIS Controls maturity level. They can't tell you which of the 18 control families they've implemented. You spend 3 weeks chasing this information over email before you can even scope the vulnerability assessment.
           </p>
         </div>
         <div>
           <span style="display:block;font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:rgba(56,189,248,0.45);margin-bottom:0.75rem;">03</span>
           <p style="font-size:1rem;color:#2d4a63;line-height:1.7;">
-            You're a security professional. Your discovery process involves emailing a Word document. That's not just inefficient — it's the irony your clients notice.
+            You're a penetration testing professional. Your client intake process involves emailing a Word document and hoping they fill in the network ranges correctly. That gap between your technical skill and your discovery workflow costs you 15 billable hours per engagement.
           </p>
         </div>
       </div>
@@ -163,7 +162,7 @@
     <div style="max-width:1120px;margin:0 auto;">
       <p style="font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#38bdf8;font-family:'JetBrains Mono',monospace;margin-bottom:1rem;">How it works</p>
       <h2 style="font-size:clamp(1.5rem,3vw,2.5rem);font-weight:700;letter-spacing:-0.015em;max-width:600px;margin-bottom:4rem;color:#e8f0f8;">
-        Your client completes the portal. You get the baseline document.
+        Client completes the portal. You get a CIS-mapped baseline. Pen test scoping starts immediately.
       </h2>
 
       <div class="grid-auto" style="gap:1.5rem;">
@@ -174,8 +173,8 @@
             </div>
             <span class="mono" style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:#2d4a63;">Step 1</span>
           </div>
-          <h3 style="font-size:1.05rem;font-weight:600;color:#e8f0f8;margin-bottom:0.75rem;">You send a branded discovery portal link</h3>
-          <p style="font-size:0.95rem;color:#2d4a63;line-height:1.65;">Your client gets a link to your AssessKit portal — white-labeled with your firm's name. One link, no account required on their end.</p>
+          <h3 style="font-size:1.05rem;font-weight:600;color:#e8f0f8;margin-bottom:0.75rem;">Send your client a guided discovery portal</h3>
+          <p style="font-size:0.95rem;color:#2d4a63;line-height:1.65;">White-labeled with your firm's name. Walks your client through network topology, existing security controls, compliance requirements, and asset inventory — with plain-English explanations for every question.</p>
         </div>
         <div class="card" style="padding:2rem;">
           <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem;">
@@ -184,8 +183,8 @@
             </div>
             <span class="mono" style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:#2d4a63;">Step 2</span>
           </div>
-          <h3 style="font-size:1.05rem;font-weight:600;color:#e8f0f8;margin-bottom:0.75rem;">A guided wizard collects everything you need</h3>
-          <p style="font-size:0.95rem;color:#2d4a63;line-height:1.65;">Each question includes plain-English explanations. Network ranges, tool inventory, user count, data classification, existing policies — all collected in one structured session.</p>
+          <h3 style="font-size:1.05rem;font-weight:600;color:#e8f0f8;margin-bottom:0.75rem;">Responses auto-map to CIS Controls and compliance frameworks</h3>
+          <p style="font-size:0.95rem;color:#2d4a63;line-height:1.65;">AssessKit maps client responses to CIS Controls v8 (all 18 control families), identifies gaps, and flags areas needing vulnerability assessment or penetration testing. No manual spreadsheet mapping.</p>
         </div>
         <div class="card" style="padding:2rem;">
           <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem;">
@@ -194,8 +193,8 @@
             </div>
             <span class="mono" style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:#2d4a63;">Step 3</span>
           </div>
-          <h3 style="font-size:1.05rem;font-weight:600;color:#e8f0f8;margin-bottom:0.75rem;">You get the baseline document the moment they submit</h3>
-          <p style="font-size:0.95rem;color:#2d4a63;line-height:1.65;">A structured pre-assessment document — formatted for immediate use — lands in your dashboard. Start the assessment on day 1, not day 21.</p>
+          <h3 style="font-size:1.05rem;font-weight:600;color:#e8f0f8;margin-bottom:0.75rem;">Get a structured baseline report ready for your assessment</h3>
+          <p style="font-size:0.95rem;color:#2d4a63;line-height:1.65;">A structured security baseline document with gap analysis, risk prioritization, and pen test scope recommendations lands in your dashboard. Start the vulnerability assessment on day 1, not day 21.</p>
         </div>
       </div>
     </div>
@@ -206,28 +205,29 @@
     <div style="max-width:1120px;margin:0 auto;">
       <p style="font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#38bdf8;font-family:'JetBrains Mono',monospace;margin-bottom:1rem;">Built for</p>
       <h2 style="font-size:clamp(1.5rem,3vw,2.5rem);font-weight:700;letter-spacing:-0.015em;max-width:600px;margin-bottom:4rem;color:#e8f0f8;">
-        Solo and 2-3 person cybersecurity consultancies serving SMB clients
+        Penetration testing and vulnerability assessment consultancies serving SMB clients
       </h2>
 
       <div class="grid-2col" style="gap:1.5rem;margin-bottom:2rem;">
         <div class="card" style="padding:2rem;">
-          <span class="mono" style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:#2d4a63;display:block;margin-bottom:1rem;">The throughput problem</span>
-          <h3 style="font-size:1.15rem;font-weight:600;color:#e8f0f8;margin-bottom:0.75rem;">Cut time-to-start from 3 weeks to 48 hours.</h3>
-          <p style="font-size:0.95rem;color:#2d4a63;line-height:1.65;">For consultants who bill by project, faster start means more assessments per quarter. Every day spent chasing incomplete discovery data is a day you're not billing. AssessKit removes that wait.</p>
+          <span class="mono" style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:#2d4a63;display:block;margin-bottom:1rem;">The scoping problem</span>
+          <h3 style="font-size:1.15rem;font-weight:600;color:#e8f0f8;margin-bottom:0.75rem;">Cut vulnerability assessment scoping from 3 weeks to 48 hours.</h3>
+          <p style="font-size:0.95rem;color:#2d4a63;line-height:1.65;">Every day spent chasing clients for network ranges and control inventories is a day you're not running the pen test. AssessKit collects everything upfront so you can scope the assessment immediately.</p>
         </div>
         <div class="card" style="padding:2rem;">
-          <span class="mono" style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:#2d4a63;display:block;margin-bottom:1rem;">The professionalism problem</span>
-          <h3 style="font-size:1.15rem;font-weight:600;color:#e8f0f8;margin-bottom:0.75rem;">Your discovery process should be as secure as your assessment.</h3>
-          <p style="font-size:0.95rem;color:#2d4a63;line-height:1.65;">Encrypted, role-gated, and auditable — not a Word document sent over Gmail. AssessKit gives you a discovery process your clients can trust, which is the first thing they're evaluating before they trust you with the rest.</p>
+          <span class="mono" style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:#2d4a63;display:block;margin-bottom:1rem;">The compliance mapping problem</span>
+          <h3 style="font-size:1.15rem;font-weight:600;color:#e8f0f8;margin-bottom:0.75rem;">CIS Controls v8 gap analysis without the spreadsheet.</h3>
+          <p style="font-size:0.95rem;color:#2d4a63;line-height:1.65;">AssessKit auto-maps client responses to all 18 CIS control families. You get a gap analysis before you start, so your vulnerability assessment targets the controls that actually need testing.</p>
         </div>
       </div>
 
       <div style="display:flex;flex-wrap:wrap;gap:0.65rem;">
-        <span class="tag">Solo cybersec consultants</span>
-        <span class="tag">2-3 person firms</span>
-        <span class="tag">SMB client base</span>
+        <span class="tag">Penetration testing firms</span>
+        <span class="tag">Vulnerability assessment consultants</span>
         <span class="tag">vCISO advisory</span>
-        <span class="tag">Pen testing firms</span>
+        <span class="tag">CIS Controls</span>
+        <span class="tag">Cloud security assessment</span>
+        <span class="tag">IoT vulnerability assessment</span>
       </div>
     </div>
   </section>
@@ -243,7 +243,7 @@
             Be among the first to use AssessKit.
           </h2>
           <p style="font-size:0.95rem;color:#2d4a63;line-height:1.7;max-width:440px;margin-bottom:2rem;">
-            We are onboarding a small group of cybersecurity consultants to test AssessKit before full launch. Join the waitlist — you will be the first to know when early access opens.
+            We are onboarding a small group of penetration testing and vulnerability assessment consultancies to test AssessKit before full launch. Join the waitlist — you will be the first to know when early access opens.
           </p>
           <div style="display:flex;flex-direction:column;gap:0.875rem;font-size:0.875rem;">
             <p style="display:flex;align-items:center;gap:0.625rem;color:rgba(232,240,248,0.75);margin:0;"><span style="width:5px;height:5px;border-radius:50%;background:#38bdf8;flex-shrink:0;"></span>Free during early access</p>
@@ -369,6 +369,5 @@
       document.getElementById('success-message').style.display = 'block';
     }
   </script>
-  <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
