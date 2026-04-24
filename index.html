@@ -234,6 +234,51 @@
     .founder-booking-badge{ position:fixed; bottom:24px; right:24px; z-index:9999; display:flex; align-items:center; gap:8px; padding:12px 20px; background:rgba(17,17,19,0.9); color:#fff; border:1px solid var(--border); border-radius:14px; cursor:pointer; font-family:inherit; font-size:14px; font-weight:600; box-shadow:0 8px 32px rgba(0,0,0,0.4); transition:all 0.3s; text-decoration:none; backdrop-filter:blur(12px); }
     .founder-booking-badge:hover{ transform:translateY(-2px); box-shadow:0 12px 40px rgba(0,0,0,0.5); border-color:rgba(56,189,248,0.2); color:#fff; }
     .founder-booking-badge svg{ width:18px; height:18px; flex-shrink:0; }
+
+    /* AHA MOMENT MORPHING ANIMATION */
+    .aha-wrap{max-width:900px;margin:0 auto;border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:0 20px 60px rgba(0,0,0,0.5);background:#111113;}
+    .aha-chrome{background:#161618;padding:0.6rem 1rem;display:flex;align-items:center;gap:0.75rem;border-bottom:1px solid var(--border);}
+    .aha-dots span{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:4px;}
+    .aha-status{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:0.7rem;font-weight:600;padding:0.3rem 0.75rem;border-radius:8px;transition:all 0.6s ease;}
+    .aha-status.pain{background:rgba(239,68,68,0.12);color:#ef4444;}
+    .aha-status.syncing{background:rgba(168,85,247,0.12);color:#a855f7;}
+    .aha-status.done{background:rgba(34,197,94,0.12);color:#22c55e;}
+    .aha-body{padding:1.5rem 1.5rem 1rem;position:relative;}
+    .aha-caption{text-align:center;padding:0.75rem 0 1rem;font-size:1.1rem;font-weight:700;transition:all 0.5s ease;min-height:2.5rem;}
+    .aha-form{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;transition:all 0.8s ease;}
+    .aha-field{padding:0.6rem 0.75rem;border-radius:8px;font-size:0.75rem;font-family:'JetBrains Mono',monospace;transition:all 0.8s ease;position:relative;overflow:hidden;}
+    .aha-field-label{font-size:0.55rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.3rem;transition:color 0.6s ease;}
+    .aha-field-value{font-size:0.8rem;font-weight:500;transition:color 0.6s ease;}
+    .aha-field.full{grid-column:1/-1;}
+    .aha-form.state-pain .aha-field{background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.2);}
+    .aha-form.state-pain .aha-field-label{color:rgba(239,68,68,0.6);}
+    .aha-form.state-pain .aha-field-value{color:var(--text-muted);}
+    .aha-form.state-pain .aha-field.has-error{border-color:#ef4444;box-shadow:0 0 0 1px rgba(239,68,68,0.3);}
+    .aha-form.state-pain .aha-field.has-error .aha-field-value{color:#ef4444;text-decoration:line-through;}
+    .aha-form.state-syncing .aha-field{background:rgba(168,85,247,0.05);border:1px solid rgba(168,85,247,0.15);}
+    .aha-form.state-syncing .aha-field-label{color:rgba(168,85,247,0.6);}
+    .aha-form.state-syncing .aha-field-value{color:#a855f7;}
+    .aha-form.state-done .aha-field{background:rgba(34,197,94,0.05);border:1px solid rgba(34,197,94,0.18);}
+    .aha-form.state-done .aha-field-label{color:rgba(34,197,94,0.6);}
+    .aha-form.state-done .aha-field-value{color:var(--text-primary);}
+    .aha-form.state-done .aha-field.has-error{border-color:rgba(34,197,94,0.18);box-shadow:none;}
+    .aha-form.state-done .aha-field.has-error .aha-field-value{color:var(--text-primary);text-decoration:none;}
+    .aha-scan{height:2px;background:transparent;margin:0.75rem 0 0;border-radius:2px;overflow:hidden;position:relative;}
+    .aha-scan-bar{position:absolute;top:0;left:0;width:0;height:100%;border-radius:2px;transition:width 1.2s ease-in-out;}
+    .aha-timer-strip{display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:0.75rem;padding:0.5rem 0;font-family:'JetBrains Mono',monospace;font-size:0.75rem;transition:all 0.5s ease;min-height:2rem;}
+    @media (max-width:600px){.aha-form{grid-template-columns:1fr;}}
+    /* ── Logical Closer ── */
+    .closer-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:900px;margin:0 auto;}
+    .closer-card{border-radius:16px;padding:2rem 1.75rem;}
+    .closer-card-old{background:rgba(239,68,68,0.03);border:1px solid rgba(239,68,68,0.12);}
+    .closer-card-new{background:rgba(34,197,94,0.03);border:1px solid rgba(34,197,94,0.15);}
+    .closer-label{font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;font-family:'JetBrains Mono',monospace;margin-bottom:1.5rem;display:flex;align-items:center;gap:0.5rem;}
+    .closer-item{display:flex;align-items:flex-start;gap:0.75rem;margin-bottom:1.15rem;}
+    .closer-item:last-child{margin-bottom:0;}
+    .closer-icon{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+    .closer-icon-x{background:rgba(239,68,68,0.1);}
+    .closer-icon-check{background:rgba(34,197,94,0.1);}
+    @media (max-width:768px){.closer-grid{grid-template-columns:1fr;gap:1rem;}}
   </style>
 </head>
 <body>
@@ -442,6 +487,80 @@
   </section>
 
   <!-- ═══════════════════════════════════════════
+       AHA MOMENT — Live Morphing Animation
+       ═══════════════════════════════════════════ -->
+  <section id="aha-section" style="padding:3rem 0 5rem;">
+    <div class="container">
+      <p class="section-label reveal">Watch the transformation</p>
+      <h2 class="section-title reveal" style="margin-bottom:2.5rem;">
+        3 weeks of manual scoping → <span class="gradient-text">Done in 48 hours with AssessKit.</span>
+      </h2>
+
+      <div class="aha-wrap reveal-scale">
+        <div class="aha-chrome">
+          <div class="aha-dots">
+            <span style="background:#ff5f57;"></span>
+            <span style="background:#ffbd2e;"></span>
+            <span style="background:#28c840;"></span>
+          </div>
+          <span style="font-size:0.6rem;color:var(--text-muted);font-family:'JetBrains Mono',monospace;">VAPT Assessment — Client Discovery Questionnaire</span>
+          <div id="aha-status" class="aha-status pain">Manual Entry</div>
+        </div>
+
+        <div class="aha-body">
+          <div id="aha-caption" class="aha-caption" style="color:#ef4444;">
+            Chasing client responses via email...
+          </div>
+
+          <div id="aha-form" class="aha-form state-pain">
+            <div class="aha-field">
+              <div class="aha-field-label">Client Name</div>
+              <div class="aha-field-value" data-pain="Acme Corp..." data-done="Acme Corporation">Acme Corp...</div>
+            </div>
+            <div class="aha-field">
+              <div class="aha-field-label">Assessment Scope</div>
+              <div class="aha-field-value" data-pain="(waiting on client...)" data-done="External network + web apps">(waiting on client...)</div>
+            </div>
+            <div class="aha-field has-error">
+              <div class="aha-field-label">CIS Controls Baseline</div>
+              <div class="aha-field-value" data-pain="Unknown — no gap data" data-done="CIS v8 — 14/18 controls mapped">Unknown — no gap data</div>
+            </div>
+            <div class="aha-field has-error">
+              <div class="aha-field-label">Framework Alignment</div>
+              <div class="aha-field-value" data-pain="NIST? ISO? (checking...)" data-done="NIST 800-53 Rev 5">NIST? ISO? (checking...)</div>
+            </div>
+            <div class="aha-field">
+              <div class="aha-field-label">Asset Inventory</div>
+              <div class="aha-field-value" data-pain="(spreadsheet pending)" data-done="47 hosts, 12 web apps cataloged">(spreadsheet pending)</div>
+            </div>
+            <div class="aha-field">
+              <div class="aha-field-label">Risk Rating</div>
+              <div class="aha-field-value" data-pain="TBD (need scan data)" data-done="High — 3 critical, 7 high findings">TBD (need scan data)</div>
+            </div>
+            <div class="aha-field full">
+              <div class="aha-field-label">Remediation Priorities</div>
+              <div class="aha-field-value" data-pain="(can't prioritize without baseline...)" data-done="3 critical vulns flagged — remediation steps auto-generated per NIST">(can't prioritize without baseline...)</div>
+            </div>
+            <div class="aha-field full">
+              <div class="aha-field-label">Executive Summary</div>
+              <div class="aha-field-value" data-pain="(drafting from scratch... again)" data-done="Assessment identified 3 critical vulnerabilities requiring immediate remediation across 47 hosts.">(drafting from scratch... again)</div>
+            </div>
+          </div>
+
+          <div class="aha-scan">
+            <div id="aha-scan-bar" class="aha-scan-bar"></div>
+          </div>
+
+          <div id="aha-timer" class="aha-timer-strip" style="color:#ef4444;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span id="aha-timer-text">~3 weeks of manual scoping</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
        PRODUCT PREVIEW DASHBOARD (Pattern 9)
        ═══════════════════════════════════════════ -->
   <section style="padding:3rem 0 5rem;">
@@ -594,6 +713,90 @@
           </div>
           <h3 style="font-size:1rem;font-weight:700;color:var(--text-primary);margin-bottom:0.5rem;">Low-value admin work</h3>
           <p style="font-size:0.9rem;color:var(--text-secondary);line-height:1.6;">You bill $200/hour but spend it formatting reports instead of finding vulnerabilities. That discovery gap costs you $3,000+ per engagement — and clients lose patience waiting.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       LOGICAL CLOSER — Old Way vs AssessKit
+       ═══════════════════════════════════════════ -->
+  <section style="padding:3rem 0 5rem;">
+    <div class="container">
+      <p class="section-label reveal">Why switch</p>
+      <h2 class="section-title reveal" style="margin-bottom:2.5rem;">
+        The old way vs. <span class="gradient-text">the AssessKit way.</span>
+      </h2>
+
+      <div class="closer-grid">
+        <div class="closer-card closer-card-old reveal reveal-delay-1">
+          <div class="closer-label" style="color:#ef4444;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            The Old Way
+          </div>
+          <div class="closer-item">
+            <div class="closer-icon closer-icon-x"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+            <div>
+              <p style="margin:0;font-size:0.9rem;font-weight:600;color:var(--text-primary);">3 weeks chasing client discovery</p>
+              <p style="margin:0.25rem 0 0;font-size:0.8rem;color:var(--text-muted);">Email the questionnaire. Wait. Follow up. Get partial answers. Chase the IT team for asset lists. Repeat.</p>
+            </div>
+          </div>
+          <div class="closer-item">
+            <div class="closer-icon closer-icon-x"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+            <div>
+              <p style="margin:0;font-size:0.9rem;font-weight:600;color:var(--text-primary);">Manual CIS Controls mapping</p>
+              <p style="margin:0.25rem 0 0;font-size:0.8rem;color:var(--text-muted);">Cross-reference 18 control families against scan results in a spreadsheet. One typo and the whole mapping breaks.</p>
+            </div>
+          </div>
+          <div class="closer-item">
+            <div class="closer-icon closer-icon-x"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+            <div>
+              <p style="margin:0;font-size:0.9rem;font-weight:600;color:var(--text-primary);">Reports copy-pasted from last engagement</p>
+              <p style="margin:0.25rem 0 0;font-size:0.8rem;color:var(--text-muted);">Generic boilerplate that doesn't match the client's actual environment. They notice.</p>
+            </div>
+          </div>
+          <div class="closer-item">
+            <div class="closer-icon closer-icon-x"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+            <div>
+              <p style="margin:0;font-size:0.9rem;font-weight:600;color:var(--text-primary);">15+ billable hours burned on admin</p>
+              <p style="margin:0.25rem 0 0;font-size:0.8rem;color:var(--text-muted);">You bill $200/hour but spend it formatting Word docs instead of finding vulnerabilities.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="closer-card closer-card-new reveal reveal-delay-2">
+          <div class="closer-label" style="color:#22c55e;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            With AssessKit
+          </div>
+          <div class="closer-item">
+            <div class="closer-icon closer-icon-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div>
+              <p style="margin:0;font-size:0.9rem;font-weight:600;color:var(--text-primary);">Structured discovery in 48 hours</p>
+              <p style="margin:0.25rem 0 0;font-size:0.8rem;color:var(--text-muted);">Client fills a guided portal. Asset inventory, security posture, and compliance status — collected automatically.</p>
+            </div>
+          </div>
+          <div class="closer-item">
+            <div class="closer-icon closer-icon-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div>
+              <p style="margin:0;font-size:0.9rem;font-weight:600;color:var(--text-primary);">Auto-mapped CIS Controls baseline</p>
+              <p style="margin:0.25rem 0 0;font-size:0.8rem;color:var(--text-muted);">Discovery responses auto-mapped to 18 CIS control families. Gap analysis generated before the scan starts.</p>
+            </div>
+          </div>
+          <div class="closer-item">
+            <div class="closer-icon closer-icon-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div>
+              <p style="margin:0;font-size:0.9rem;font-weight:600;color:var(--text-primary);">Client-specific reports from scan data</p>
+              <p style="margin:0.25rem 0 0;font-size:0.8rem;color:var(--text-muted);">Every finding mapped to the client's actual environment. Remediation steps generated per framework. No boilerplate.</p>
+            </div>
+          </div>
+          <div class="closer-item">
+            <div class="closer-icon closer-icon-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div>
+              <p style="margin:0;font-size:0.9rem;font-weight:600;color:var(--text-primary);">15 hours back on every engagement</p>
+              <p style="margin:0.25rem 0 0;font-size:0.8rem;color:var(--text-muted);">Automated reporting means you spend time finding vulnerabilities, not formatting them.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1001,6 +1204,62 @@
       }
       return false;
     }
+
+    // ── Aha Morphing Animation ──
+    (function() {
+      var form = document.getElementById('aha-form');
+      var status = document.getElementById('aha-status');
+      var caption = document.getElementById('aha-caption');
+      var scanBar = document.getElementById('aha-scan-bar');
+      var timer = document.getElementById('aha-timer');
+      var timerText = document.getElementById('aha-timer-text');
+      var fields = form.querySelectorAll('.aha-field-value');
+      var section = document.getElementById('aha-section');
+      var started = false;
+      function runCycle() {
+        form.className = 'aha-form state-pain';
+        status.className = 'aha-status pain';
+        status.textContent = 'Manual Entry';
+        caption.style.color = '#ef4444';
+        caption.textContent = 'Chasing client responses via email...';
+        scanBar.style.width = '0';
+        scanBar.style.background = 'transparent';
+        timer.style.color = '#ef4444';
+        timerText.textContent = '~3 weeks of manual scoping';
+        fields.forEach(function(f) { f.textContent = f.dataset.pain; });
+        setTimeout(function() {
+          form.className = 'aha-form state-syncing';
+          status.className = 'aha-status syncing';
+          status.textContent = 'AI Mapping...';
+          caption.style.color = '#a855f7';
+          caption.textContent = 'AssessKit mapping discovery to CIS Controls...';
+          scanBar.style.background = 'linear-gradient(90deg, #a855f7, #8b5cf6)';
+          scanBar.style.width = '100%';
+          timer.style.color = '#a855f7';
+          timerText.textContent = 'Mapping controls and generating baseline...';
+        }, 3000);
+        setTimeout(function() {
+          fields.forEach(function(f, i) {
+            setTimeout(function() { f.textContent = f.dataset.done; }, i * 150);
+          });
+        }, 4500);
+        setTimeout(function() {
+          form.className = 'aha-form state-done';
+          status.className = 'aha-status done';
+          status.textContent = 'Done in 48h';
+          caption.style.color = '#22c55e';
+          caption.textContent = 'Baseline mapped. Report drafted. Ready for review.';
+          scanBar.style.background = 'linear-gradient(90deg, #22c55e, #16a34a)';
+          timer.style.color = '#22c55e';
+          timerText.textContent = '48 hours — zero manual mapping';
+        }, 6000);
+        setTimeout(function() { runCycle(); }, 10000);
+      }
+      var ahaObs = new IntersectionObserver(function(entries) {
+        if (entries[0].isIntersecting && !started) { started = true; runCycle(); ahaObs.unobserve(section); }
+      }, { threshold: 0.3 });
+      ahaObs.observe(section);
+    })();
   </script>
 
   <!-- Floating "Book a Call" Badge -->
