@@ -719,86 +719,75 @@
   </section>
 
   <!-- ═══════════════════════════════════════════
-       LOGICAL CLOSER — Old Way vs AssessKit
+       COMPARISON TABLE — Traditional VAPT vs AssessKit
        ═══════════════════════════════════════════ -->
   <section style="padding:3rem 0 5rem;">
     <div class="container">
-      <p class="section-label reveal">Why switch</p>
-      <h2 class="section-title reveal" style="margin-bottom:2.5rem;">
-        The old way vs. <span class="gradient-text">the AssessKit way.</span>
+      <p class="section-label reveal">The real comparison</p>
+      <h2 class="section-title reveal" style="margin-bottom:1rem;">
+        Traditional pentesting is <span class="gradient-text">expensive, slow, and outdated.</span>
       </h2>
+      <p class="reveal" style="text-align:center;color:var(--text-muted);font-size:0.95rem;margin-bottom:2.5rem;max-width:640px;margin-left:auto;margin-right:auto;">Every row is a reason your current process can't scale. AssessKit fixes all of them.</p>
 
-      <div class="closer-grid">
-        <div class="closer-card closer-card-old reveal reveal-delay-1">
-          <div class="closer-label" style="color:#ef4444;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-            The Old Way
-          </div>
-          <div class="closer-item">
-            <div class="closer-icon closer-icon-x"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
-            <div>
-              <p style="margin:0;font-size:0.9rem;font-weight:600;color:var(--text-primary);">3 weeks chasing client discovery</p>
-              <p style="margin:0.25rem 0 0;font-size:0.8rem;color:var(--text-muted);">Email the questionnaire. Wait. Follow up. Get partial answers. Chase the IT team for asset lists. Repeat.</p>
-            </div>
-          </div>
-          <div class="closer-item">
-            <div class="closer-icon closer-icon-x"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
-            <div>
-              <p style="margin:0;font-size:0.9rem;font-weight:600;color:var(--text-primary);">Manual CIS Controls mapping</p>
-              <p style="margin:0.25rem 0 0;font-size:0.8rem;color:var(--text-muted);">Cross-reference 18 control families against scan results in a spreadsheet. One typo and the whole mapping breaks.</p>
-            </div>
-          </div>
-          <div class="closer-item">
-            <div class="closer-icon closer-icon-x"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
-            <div>
-              <p style="margin:0;font-size:0.9rem;font-weight:600;color:var(--text-primary);">Reports copy-pasted from last engagement</p>
-              <p style="margin:0.25rem 0 0;font-size:0.8rem;color:var(--text-muted);">Generic boilerplate that doesn't match the client's actual environment. They notice.</p>
-            </div>
-          </div>
-          <div class="closer-item">
-            <div class="closer-icon closer-icon-x"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
-            <div>
-              <p style="margin:0;font-size:0.9rem;font-weight:600;color:var(--text-primary);">15+ billable hours burned on admin</p>
-              <p style="margin:0.25rem 0 0;font-size:0.8rem;color:var(--text-muted);">You bill $200/hour but spend it formatting Word docs instead of finding vulnerabilities.</p>
-            </div>
-          </div>
+      <div class="reveal" style="max-width:900px;margin:0 auto;border-radius:16px;overflow:hidden;border:1px solid var(--border);background:#111113;">
+        <!-- Table Header -->
+        <div style="display:grid;grid-template-columns:2fr 1fr 1fr;background:#161618;border-bottom:1px solid var(--border);font-family:'JetBrains Mono',monospace;font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;">
+          <div style="padding:1rem 1.25rem;color:var(--text-muted);"></div>
+          <div style="padding:1rem 1.25rem;color:#ef4444;text-align:center;border-left:1px solid var(--border);">Traditional VAPT</div>
+          <div style="padding:1rem 1.25rem;color:#22c55e;text-align:center;border-left:1px solid var(--border);background:rgba(34,197,94,0.03);">AssessKit</div>
         </div>
 
-        <div class="closer-card closer-card-new reveal reveal-delay-2">
-          <div class="closer-label" style="color:#22c55e;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            With AssessKit
-          </div>
-          <div class="closer-item">
-            <div class="closer-icon closer-icon-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div>
-              <p style="margin:0;font-size:0.9rem;font-weight:600;color:var(--text-primary);">Structured discovery in 48 hours</p>
-              <p style="margin:0.25rem 0 0;font-size:0.8rem;color:var(--text-muted);">Client fills a guided portal. Asset inventory, security posture, and compliance status — collected automatically.</p>
-            </div>
-          </div>
-          <div class="closer-item">
-            <div class="closer-icon closer-icon-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div>
-              <p style="margin:0;font-size:0.9rem;font-weight:600;color:var(--text-primary);">Auto-mapped CIS Controls baseline</p>
-              <p style="margin:0.25rem 0 0;font-size:0.8rem;color:var(--text-muted);">Discovery responses auto-mapped to 18 CIS control families. Gap analysis generated before the scan starts.</p>
-            </div>
-          </div>
-          <div class="closer-item">
-            <div class="closer-icon closer-icon-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div>
-              <p style="margin:0;font-size:0.9rem;font-weight:600;color:var(--text-primary);">Client-specific reports from scan data</p>
-              <p style="margin:0.25rem 0 0;font-size:0.8rem;color:var(--text-muted);">Every finding mapped to the client's actual environment. Remediation steps generated per framework. No boilerplate.</p>
-            </div>
-          </div>
-          <div class="closer-item">
-            <div class="closer-icon closer-icon-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div>
-              <p style="margin:0;font-size:0.9rem;font-weight:600;color:var(--text-primary);">15 hours back on every engagement</p>
-              <p style="margin:0.25rem 0 0;font-size:0.8rem;color:var(--text-muted);">Automated reporting means you spend time finding vulnerabilities, not formatting them.</p>
-            </div>
-          </div>
+        <!-- Row: Cost per engagement -->
+        <div style="display:grid;grid-template-columns:2fr 1fr 1fr;border-bottom:1px solid rgba(255,255,255,0.04);">
+          <div style="padding:1rem 1.25rem;"><p style="margin:0;font-size:0.85rem;font-weight:600;color:var(--text-primary);">Cost per engagement</p><p style="margin:0.2rem 0 0;font-size:0.75rem;color:var(--text-muted);">What you spend before a single vulnerability is found</p></div>
+          <div style="padding:1rem 1.25rem;text-align:center;border-left:1px solid var(--border);display:flex;flex-direction:column;justify-content:center;"><span style="font-size:1.1rem;font-weight:800;color:#ef4444;">$3,000+</span><span style="font-size:0.7rem;color:var(--text-muted);margin-top:0.25rem;">in admin hours alone</span></div>
+          <div style="padding:1rem 1.25rem;text-align:center;border-left:1px solid var(--border);background:rgba(34,197,94,0.02);display:flex;flex-direction:column;justify-content:center;"><span style="font-size:1.1rem;font-weight:800;color:#22c55e;">$0</span><span style="font-size:0.7rem;color:var(--text-muted);margin-top:0.25rem;">admin time automated</span></div>
+        </div>
+
+        <!-- Row: Client discovery -->
+        <div style="display:grid;grid-template-columns:2fr 1fr 1fr;border-bottom:1px solid rgba(255,255,255,0.04);">
+          <div style="padding:1rem 1.25rem;"><p style="margin:0;font-size:0.85rem;font-weight:600;color:var(--text-primary);">Client discovery</p><p style="margin:0.2rem 0 0;font-size:0.75rem;color:var(--text-muted);">Getting asset lists, security posture, and compliance scope</p></div>
+          <div style="padding:1rem 1.25rem;text-align:center;border-left:1px solid var(--border);display:flex;flex-direction:column;justify-content:center;"><span style="font-size:1.1rem;font-weight:800;color:#ef4444;">2-3 weeks</span><span style="font-size:0.7rem;color:var(--text-muted);margin-top:0.25rem;">email tag, partial answers</span></div>
+          <div style="padding:1rem 1.25rem;text-align:center;border-left:1px solid var(--border);background:rgba(34,197,94,0.02);display:flex;flex-direction:column;justify-content:center;"><span style="font-size:1.1rem;font-weight:800;color:#22c55e;">48 hours</span><span style="font-size:0.7rem;color:var(--text-muted);margin-top:0.25rem;">guided portal, structured data</span></div>
+        </div>
+
+        <!-- Row: CIS Controls mapping -->
+        <div style="display:grid;grid-template-columns:2fr 1fr 1fr;border-bottom:1px solid rgba(255,255,255,0.04);">
+          <div style="padding:1rem 1.25rem;"><p style="margin:0;font-size:0.85rem;font-weight:600;color:var(--text-primary);">CIS Controls mapping</p><p style="margin:0.2rem 0 0;font-size:0.75rem;color:var(--text-muted);">Mapping findings to 18 control families</p></div>
+          <div style="padding:1rem 1.25rem;text-align:center;border-left:1px solid var(--border);display:flex;flex-direction:column;justify-content:center;"><span style="font-size:1.1rem;font-weight:800;color:#ef4444;">Manual</span><span style="font-size:0.7rem;color:var(--text-muted);margin-top:0.25rem;">spreadsheet, error-prone</span></div>
+          <div style="padding:1rem 1.25rem;text-align:center;border-left:1px solid var(--border);background:rgba(34,197,94,0.02);display:flex;flex-direction:column;justify-content:center;"><span style="font-size:1.1rem;font-weight:800;color:#22c55e;">Automatic</span><span style="font-size:0.7rem;color:var(--text-muted);margin-top:0.25rem;">pre-scan baseline generated</span></div>
+        </div>
+
+        <!-- Row: Report generation -->
+        <div style="display:grid;grid-template-columns:2fr 1fr 1fr;border-bottom:1px solid rgba(255,255,255,0.04);">
+          <div style="padding:1rem 1.25rem;"><p style="margin:0;font-size:0.85rem;font-weight:600;color:var(--text-primary);">Report generation</p><p style="margin:0.2rem 0 0;font-size:0.75rem;color:var(--text-muted);">From scan complete to client-ready deliverable</p></div>
+          <div style="padding:1rem 1.25rem;text-align:center;border-left:1px solid var(--border);display:flex;flex-direction:column;justify-content:center;"><span style="font-size:1.1rem;font-weight:800;color:#ef4444;">8-15 hours</span><span style="font-size:0.7rem;color:var(--text-muted);margin-top:0.25rem;">copy-paste boilerplate</span></div>
+          <div style="padding:1rem 1.25rem;text-align:center;border-left:1px solid var(--border);background:rgba(34,197,94,0.02);display:flex;flex-direction:column;justify-content:center;"><span style="font-size:1.1rem;font-weight:800;color:#22c55e;">Minutes</span><span style="font-size:0.7rem;color:var(--text-muted);margin-top:0.25rem;">client-specific, auto-generated</span></div>
+        </div>
+
+        <!-- Row: Report quality -->
+        <div style="display:grid;grid-template-columns:2fr 1fr 1fr;border-bottom:1px solid rgba(255,255,255,0.04);">
+          <div style="padding:1rem 1.25rem;"><p style="margin:0;font-size:0.85rem;font-weight:600;color:var(--text-primary);">Report quality</p><p style="margin:0.2rem 0 0;font-size:0.75rem;color:var(--text-muted);">Does the deliverable match the client's environment?</p></div>
+          <div style="padding:1rem 1.25rem;text-align:center;border-left:1px solid var(--border);display:flex;flex-direction:column;justify-content:center;"><span style="font-size:1.1rem;font-weight:800;color:#ef4444;">Generic</span><span style="font-size:0.7rem;color:var(--text-muted);margin-top:0.25rem;">recycled from last client</span></div>
+          <div style="padding:1rem 1.25rem;text-align:center;border-left:1px solid var(--border);background:rgba(34,197,94,0.02);display:flex;flex-direction:column;justify-content:center;"><span style="font-size:1.1rem;font-weight:800;color:#22c55e;">Custom</span><span style="font-size:0.7rem;color:var(--text-muted);margin-top:0.25rem;">mapped to actual scan data</span></div>
+        </div>
+
+        <!-- Row: Remediation tracking -->
+        <div style="display:grid;grid-template-columns:2fr 1fr 1fr;border-bottom:1px solid rgba(255,255,255,0.04);">
+          <div style="padding:1rem 1.25rem;"><p style="margin:0;font-size:0.85rem;font-weight:600;color:var(--text-primary);">Remediation tracking</p><p style="margin:0.2rem 0 0;font-size:0.75rem;color:var(--text-muted);">Did the client actually fix the findings?</p></div>
+          <div style="padding:1rem 1.25rem;text-align:center;border-left:1px solid var(--border);display:flex;flex-direction:column;justify-content:center;"><span style="font-size:1.1rem;font-weight:800;color:#ef4444;">None</span><span style="font-size:0.7rem;color:var(--text-muted);margin-top:0.25rem;">PDF delivered, hope for the best</span></div>
+          <div style="padding:1rem 1.25rem;text-align:center;border-left:1px solid var(--border);background:rgba(34,197,94,0.02);display:flex;flex-direction:column;justify-content:center;"><span style="font-size:1.1rem;font-weight:800;color:#22c55e;">Built-in</span><span style="font-size:0.7rem;color:var(--text-muted);margin-top:0.25rem;">per-finding status + re-scan</span></div>
+        </div>
+
+        <!-- Row: Scalability -->
+        <div style="display:grid;grid-template-columns:2fr 1fr 1fr;">
+          <div style="padding:1rem 1.25rem;"><p style="margin:0;font-size:0.85rem;font-weight:600;color:var(--text-primary);">Engagements per consultant/month</p><p style="margin:0.2rem 0 0;font-size:0.75rem;color:var(--text-muted);">How many clients can one person handle?</p></div>
+          <div style="padding:1rem 1.25rem;text-align:center;border-left:1px solid var(--border);display:flex;flex-direction:column;justify-content:center;"><span style="font-size:1.1rem;font-weight:800;color:#ef4444;">2-3</span><span style="font-size:0.7rem;color:var(--text-muted);margin-top:0.25rem;">bottlenecked by admin</span></div>
+          <div style="padding:1rem 1.25rem;text-align:center;border-left:1px solid var(--border);background:rgba(34,197,94,0.02);display:flex;flex-direction:column;justify-content:center;"><span style="font-size:1.1rem;font-weight:800;color:#22c55e;">6-8</span><span style="font-size:0.7rem;color:var(--text-muted);margin-top:0.25rem;">admin eliminated</span></div>
         </div>
       </div>
+
+      <p class="reveal" style="text-align:center;color:var(--text-muted);font-size:0.8rem;margin-top:1.5rem;font-family:'JetBrains Mono',monospace;">Every hour you spend formatting a Word doc is an hour you're not finding vulnerabilities.</p>
     </div>
   </section>
 
